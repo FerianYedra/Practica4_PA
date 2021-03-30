@@ -6,6 +6,8 @@
  */
 
 #include "def.h"
+#define MAX 1000
+#define MIN 0
 
 int main(int argc, char *argv[]){
 	int n, i, numero;
@@ -21,7 +23,7 @@ int main(int argc, char *argv[]){
 	}
 	srand(time(0));
 	for(i = 0; i < n; i++){
-		fprintf(fp, "%i\n", rand() % (1000 + 1 - 0) + 0);
+		fprintf(fp, "%i\n", rand() % (MAX + 1 - MIN) + MIN);
 	}
 	fclose(fp);
 	printf("Archivo de numeros aleatorios escrito\n");
