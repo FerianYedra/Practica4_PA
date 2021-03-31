@@ -9,8 +9,11 @@
 #define MAX 1000
 #define MIN 0
 
+void quickSort(int arr[], int n);
+
 int main(int argc, char *argv[]){
-	int n, i;
+	int n, i, buscar;
+	time_t inicial, final;
 	FILE *fp;
 
 	printf("¿Cuántos números desea generar?\n");
@@ -23,16 +26,28 @@ int main(int argc, char *argv[]){
 		exit(1);
 	}
 	srand(time(0));
-	printf("+++++Lista generada++++\n");
+	printf("+++++Lista generada+++++\n");
 	for(i = 0; i < n; i++){
 		numeros[i] = rand() % (MAX + 1 - MIN) + MIN;
 		printf("%i\n", numeros[i]);
 		fprintf(fp, "%i\n", numeros[i]);
 	}
-	printf("+++++++++++++++++++++++\n");
+	printf("++++++++++++++++++++++++\n");
 	fclose(fp);
 	printf("Archivo de numeros aleatorios escrito\n");
-	//TODO El resto del progema
+	inicial = time(0);
+	quickSort(numeros, n);
+	//TODO Agregar iteraciones?
+	final = inicial - time(0);
+	printf("++++Lista Ordenada+++++\n");
+	for(i = 0; i < n; i++){
+		printf("%i\n", numeros[i]);
+	}
+	printf("+++++++++++++++++++++++\n");
+	printf("Tiempo transcurrido para ordenar: %ld segundos\n", final);
+	printf("Número a buscar: ");
+	scanf(" %i", &buscar);
+	//TODO Funcion para buscar número
 
 	return 0;
 }
