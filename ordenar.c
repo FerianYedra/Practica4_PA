@@ -10,9 +10,10 @@
 #define MIN 0
 
 void quickSort(int arr[], int n);
+int busquedaBinaria(int x, int arr[], int n);
 
 int main(int argc, char *argv[]){
-	int n, i, buscar;
+	int n, i, buscar, pos;
 	time_t inicial, final;
 	FILE *fp;
 
@@ -38,7 +39,7 @@ int main(int argc, char *argv[]){
 	inicial = time(0);
 	quickSort(numeros, n);
 	//TODO Agregar iteraciones?
-	final = inicial - time(0);
+	final = time(0) - inicial;
 	printf("++++Lista Ordenada+++++\n");
 	for(i = 0; i < n; i++){
 		printf("%i\n", numeros[i]);
@@ -47,7 +48,12 @@ int main(int argc, char *argv[]){
 	printf("Tiempo transcurrido para ordenar: %ld segundos\n", final);
 	printf("Número a buscar: ");
 	scanf(" %i", &buscar);
-	//TODO Funcion para buscar número
+	pos = busquedaBinaria(buscar, numeros, n);
+	if(pos >= 0){
+		printf("El número %i esta en la posición %i\n", buscar, pos);
+	}else{
+		printf("El número %i no esta en la lista\n", buscar);
+	}
 
 	return 0;
 }
