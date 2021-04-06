@@ -14,12 +14,18 @@ int busquedaBinaria(int x, int arr[], int n);
 
 int main(int argc, char *argv[]){
 	int n, i, buscar, pos;
+	int *tam;
 	time_t inicial, final;
 	FILE *fp;
 
 	printf("¿Cuántos números desea generar?\n");
 	printf("n = ");
 	scanf(" %i", &n);
+	tam = calloc(n, sizeof(int));
+	if(tam == NULL){
+		printf("Error, no hay memoria disponible\n");
+		exit(1);
+	}
 	int numeros[n];
 	fp = fopen("aleatrios.txt", "w");
 	if(fp == NULL){
