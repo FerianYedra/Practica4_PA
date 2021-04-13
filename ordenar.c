@@ -19,6 +19,7 @@ int main(int argc, char *argv[]){
 	time_t inicial, final;
 	FILE *fp;
 
+	printf("n: %s\n", f1);
 	printf("¿Cuántos números desea generar?\n");
 	printf("n = ");
 	scanf(" %i", &n);
@@ -65,7 +66,7 @@ int main(int argc, char *argv[]){
 		printf("El número %i no esta en la lista\n", buscar);
 	}
 	printf("Tiempo transcurrido para ordenar: %ld segundos\n", final);
-	fp = fopen("ordenados.txt", "w");
+	fp = fopen(argv[2], "w");
 	if(fp == NULL){
 		printf("ERROR: Archivo %s no disponible\n", argv[2]);
 		exit(1);
