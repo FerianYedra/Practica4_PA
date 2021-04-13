@@ -19,7 +19,7 @@ int main(int argc, char *argv[]){
 	time_t inicial, final;
 	FILE *fp;
 
-	printf("n: %s\n", f1);
+	argv[2] = (argv[1] == NULL) ? NULL : argv[2];
 	printf("¿Cuántos números desea generar?\n");
 	printf("n = ");
 	scanf(" %i", &n);
@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
 		printf("ERROR: no hay memoria disponible\n");
 		exit(1);
 	}
-	fp = fopen(argv[1], "w");
+	fp = fopen((argv[1]!=NULL) ? argv[1] : "aleatorios.txt", "w");
 	if(fp == NULL){
 		printf("ERROR: Archivo (%s) no disponible\n", argv[1]);
 		exit(1);
@@ -66,7 +66,7 @@ int main(int argc, char *argv[]){
 		printf("El número %i no esta en la lista\n", buscar);
 	}
 	printf("Tiempo transcurrido para ordenar: %ld segundos\n", final);
-	fp = fopen(argv[2], "w");
+	fp = fopen((argv[2]!=NULL) ? argv[2] : "ordenados.txt", "w");
 	if(fp == NULL){
 		printf("ERROR: Archivo %s no disponible\n", argv[2]);
 		exit(1);
