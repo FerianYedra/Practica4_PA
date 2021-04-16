@@ -1,8 +1,22 @@
 /**
- * @file
- * @brief
- * @author
- * @date
+ * @file ordenar.c
+ * @brief Este programa diene tiene el proposito de crear un numero 'n' de números aleatorios
+ * 	  utilizando la función rand(), los números se mandan a guardar a un arreglo dinámico,
+ * 	  posteriormente se manda a quitar los números repetidos del arreglo, el programa
+ * 	  utiliza el método de quick sort para ordenar los números de forma acendente, con ayuda
+ * 	  de time() el programa cronometra el tiempo para ordenar los números, el programa
+ * 	  pregunta por un número a buscar con el método de busqueda binaria e indica si encontro
+ * 	  el número y su posición en el arreglo,el programa vuelve a cronometrar el tiempo que
+ * 	  tarda en encontrar el número y avisa si no lo encuenta.
+ * 	  El programa se puede ejecutar de dos formas:
+ * 	  1)	./ordenar.exe <nombre1.txt> <nombre2.txt>
+ * 	  El programa guarda en <nombre1.txt> un arhcivo con los números aleatorios y en
+ * 	  <nombre2.txt> un archivo con los números ordenados
+ * 	  2)	./ordenar.exe
+ * 	  El prgrama guarda en aleatorios.txt los números aleatorios y en ordenados.txt los
+ * 	  números ordenados.
+ * @author Fernando Yedra
+ * @date 15/04/2021
  */
 
 #include "def.h"
